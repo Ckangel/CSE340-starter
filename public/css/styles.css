@@ -598,14 +598,24 @@ table#inventoryDisplay a:hover {
   margin: 20px auto;
   background-color: var(--color-primary-variant);
 }
-.country a{
+.country a {
   text-decoration: none;
   color: var(--color-white);
+  text-align: center;
+  font-weight: bolder;
 }
+
 .country a:hover{
   text-decoration: underline;
   color: var(--color-bg);
 }
+
+.country p {
+  text-align: center;
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+}
+
 .notice {
   padding: 10px 20px;
   margin-bottom: 20px;
