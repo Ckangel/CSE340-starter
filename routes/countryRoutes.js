@@ -1,10 +1,12 @@
-const express = require("express");
-const router = express.Router();
-const controller = require("../controllers/countryController");
-const validate = require("../validators/countryValidator");
+const express = require("express")
+const router = new express.Router()
+const countryController = require("../controllers/countryController")
+const utilities = require("../utilities")
 
-router.get("/", controller.index);
-router.post("/countries", validate, controller.create);
+// Route to deliver main countries view
+router.get("/", utilities.handleErrors(countryController.buildCountriesView))
 
-module.exports = router;
-// This file defines the routes for the country-related operations.
+// Route to handle country search
+router.post("/search", utilities.handleErrors(countryController.searchCountries))
+
+module.exports = router

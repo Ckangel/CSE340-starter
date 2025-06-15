@@ -14,6 +14,7 @@ const static = require("./routes/static");
 const baseController = require("./controllers/baseController");
 const inventoryRoute = require("./routes/inventoryRoute");
 const accountRoute =require("./routes/accountRoute")
+const countryRoute =require("./routes/countryRoutes")
 const utilities = require("./utilities/");
 const session = require("express-session")
 const pool = require('./database/')
@@ -77,6 +78,9 @@ app.use("/inv", inventoryRoute);
 // account route
 app.use("/account",accountRoute);
 
+//coutry routes
+app.use("/country",countryRoute)
+
 
 // Index route
 app.get("/", utilities.handleErrors(baseController.buildHome));
@@ -105,23 +109,3 @@ app.listen(port, () => {
   console.log(`app listening on ${host}:${port}`);
 });
 
-// country server.js
-const logCountryInfo = (countries) => {
-  countries.forEach(country => {
-    console.log(`${country.name} has a population of ${country.population}.`);
-  });
-};
-
-const filterBigCountries = (countries, threshold) => {
-  return countries.filter(c => c.population > threshold);
-};
-
-app.get("/test", (req, res) => {
-  const countries = [
-    { name: "Nigeria", population: 206000000 },
-    { name: "Ghana", population: 31000000 }
-  ];
-  logCountryInfo(countries);
-  const large = filterBigCountries(countries, 50000000);
-  res.json(large);
-});

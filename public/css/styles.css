@@ -589,6 +589,82 @@ table#inventoryDisplay a:hover {
   color: var(--color-red);
   text-align: center;
 }
+/* countries style */
+.country{
+  width: 100%;
+  max-width: 600px;
+  padding: 2rem;
+  color: var(--color-white);
+  margin: 20px auto;
+  background-color: var(--color-primary-variant);
+}
+.country a{
+  text-decoration: none;
+  color: var(--color-white);
+}
+.country a:hover{
+  text-decoration: underline;
+  color: var(--color-bg);
+}
+.notice {
+  padding: 10px 20px;
+  margin-bottom: 20px;
+}
+
+.search-form {
+  display: flex;
+  width: 100%;
+  gap: 10px;
+  margin: 20px auto;
+  max-width: 600px;
+}
+
+.search-form label {
+  font-weight: bold;
+  line-height: 3rem;
+}
+
+.search-form input[type="text"] {
+  flex: 1;
+  padding: 8px;
+  font-size: 16px;
+}
+
+.search-form button {
+  background-color: #3498db;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+.search-form button:hover {
+  background-color: #2980b9;
+}
+
+.country-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px,1fr));
+  gap: 20px;
+  padding: 0 20px;
+}
+
+.country-card {
+  border: 1px solid #ddd;
+  margin: 0;
+  padding: 15px;
+  height: auto;
+  border-radius: 5px;
+  background-color: #fff;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.flag-image {
+  max-width: 250px;
+  height: auto;
+  border-radius: 3px;
+}
+/* end of countries style */
 
 @media (max-width: 480px) {
   .vehicle-info h1 {
