@@ -104,3 +104,24 @@ const host = process.env.HOST;
 app.listen(port, () => {
   console.log(`app listening on ${host}:${port}`);
 });
+
+// country server.js
+const logCountryInfo = (countries) => {
+  countries.forEach(country => {
+    console.log(`${country.name} has a population of ${country.population}.`);
+  });
+};
+
+const filterBigCountries = (countries, threshold) => {
+  return countries.filter(c => c.population > threshold);
+};
+
+app.get("/test", (req, res) => {
+  const countries = [
+    { name: "Nigeria", population: 206000000 },
+    { name: "Ghana", population: 31000000 }
+  ];
+  logCountryInfo(countries);
+  const large = filterBigCountries(countries, 50000000);
+  res.json(large);
+});

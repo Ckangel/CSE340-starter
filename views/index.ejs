@@ -51,3 +51,21 @@
         </div>
     </div>
 </section>
+
+<section>
+<div class="country-section" style="text-align: center; margin-top: 3rem;">
+    <h2>🌍 West African Countries</h2>
+    <div class="country-grid" style="display: flex; flex-wrap: wrap; justify-content: center; gap: 2rem; padding: 1rem;">
+    <% countries.forEach(country => { %>
+        <div class="country-card" style="border: 1px solid #ccc; border-radius: 8px; padding: 1rem; width: 250px; background-color: #f9f9f9;">
+        <h3><%= country.name %></h3>
+        <p><strong>Capital:</strong> <%= country.capital %></p>
+        <p><strong>Population:</strong> <%= country.population.toLocaleString() %></p>
+        <p><strong>Language:</strong> <%= country.official_language %></p>
+        <p><strong>Currency:</strong> <%= country.currency %></p>
+        <img src="<%= country.national_flag_url %>" alt="Flag of <%= country.name %>" style="max-width: 100px; margin-top: 0.5rem;">
+        </div>
+    <% }) %>
+    </div>
+    </div>
+</section>
