@@ -657,6 +657,17 @@ table#inventoryDisplay a:hover {
   border-radius: 5px;
   background-color: #fff;
   box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  transition: transform 5s ease-in-out;
+}
+
+.country-card:hover {
+  animation: hoverEffect 5s forwards;
+}
+
+@keyframes hoverEffect {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+  100% { transform: scale(1); }
 }
 
 .flag-image {
